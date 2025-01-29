@@ -1,4 +1,5 @@
 ##biblioteca de comandos basicos 
+#1
 
 SELECT
    0 s_0,
@@ -12,3 +13,5 @@ WHERE
 (("Eventos"."Código Evento" LIKE '60%') AND ("Anos"."Ano Referência" BETWEEN '2012' AND '2024') AND ("UG Documento"."Código UG Documento" IN ('081101', '081102')))
 ORDER BY 2 ASC NULLS LAST
 FETCH FIRST 10000001 ROWS ONLY
+
+#2
