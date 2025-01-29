@@ -1,6 +1,10 @@
 
   ## SQL para analizar qualquer conjunto de DADOS
 
+  Comandos utilizados como Analista de Dados Técnica PL pelo Governo de Estado de São Paulo [Nov/2024 - até o momento]
+  OBS: JANEIRO de 2025/ add buscas utilizadas de SQL no **SIGEO** (SIGEO: Sistema de Informações Gerenciais da Execução Orçamentária) praticamente o banco de dados da União que possibilita a gestão e transparência dos gastos públicos, através da elaboração de consultas e relatórios. 
+  - Banco Oracle Business Intelligence
+
   ## 1 - Importando Conjuntos de Dados
 
 Como parte do meu trabalho como analista de dados, desenvolvi vários projetos que envolvem a importação e análise de conjuntos de dados. Para executar consultas SQL, precisamos importar os conjuntos de dados relevantes. Recomendo fortemente que baixe o arquivo Excel disponível em {conjunto de dados.xlsx} que contém o esquema e os dados bem similar ao que eu utilizo no meu trabalho com análises. 
