@@ -17,3 +17,7 @@ data = { "Ano": [2023, 2024], "Empenhado": [ df_fluxo_documentos_2023["Empenhado
 \\Criando um DataFrame a partir do dicionário
 
 df = pd.DataFrame(data) 
+
+\\Criando uma tabela dinâmica com Ano como linhas e Empenhado, Liquidado e Pago como colunas
+
+df_pivot = df.pivot_table( index=["Ano"], values=["Empenhado", "Liquidado", "Pago"], aggfunc="sum" ) 
