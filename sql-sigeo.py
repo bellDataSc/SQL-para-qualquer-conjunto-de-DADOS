@@ -14,3 +14,6 @@ data = { "Ano": [2023, 2024], "Empenhado": [ df_fluxo_documentos_2023["Empenhado
         "Liquidado": [ df_fluxo_documentos_2023["Liquidado"].sum(), df_fluxo_documentos_2024["Liquidado"].sum(), ], 
         "Pago": [ df_fluxo_documentos_2023["Pago"].sum(), df_fluxo_documentos_2024["Pago"].sum(), ], } 
 
+\\Criando um DataFrame a partir do dicionário
+
+df = pd.DataFrame(data) 
