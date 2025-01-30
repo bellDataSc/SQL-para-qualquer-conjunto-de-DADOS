@@ -21,3 +21,8 @@ df = pd.DataFrame(data)
 \\Criando uma tabela dinâmica com Ano como linhas e Empenhado, Liquidado e Pago como colunas
 
 df_pivot = df.pivot_table( index=["Ano"], values=["Empenhado", "Liquidado", "Pago"], aggfunc="sum" ) 
+
+\\Exibir as primeiras 5 linhas da tabela dinâmica
+
+print("First 5 rows of Pivot:") print(df_pivot.head().to_markdown(index=False, numalign="left", stralign="left")) 
+
