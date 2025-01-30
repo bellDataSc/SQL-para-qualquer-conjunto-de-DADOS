@@ -26,3 +26,7 @@ df_pivot = df.pivot_table( index=["Ano"], values=["Empenhado", "Liquidado", "Pag
 
 print("First 5 rows of Pivot:") print(df_pivot.head().to_markdown(index=False, numalign="left", stralign="left")) 
 
+\\Exibir os nomes das colunas e seus tipos de dados
+
+print("\nData Types:") print(df_pivot.info()) 
+
