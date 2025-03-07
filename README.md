@@ -19,24 +19,55 @@ Banco Oracle Business Intelligence
   **Quando criei o repositório estava em exercio pelo Estado de Minas Gerais, tambem como Analista de Dados PL, ambos os governos de estado MG e SP usam do mesmo sistema.
 
 
-  ## 1 - Importando Conjuntos de Dados
+ # 🗂 Estrutura do Repositório
 
-Como parte do meu trabalho como analista de dados, desenvolvi vários projetos que envolvem a importação e análise de conjuntos de dados. Para executar consultas SQL, precisamos importar os conjuntos de dados relevantes. Recomendo fortemente que baixe o arquivo Excel disponível em {conjunto de dados.xlsx} que contém o esquema e os dados bem similar ao que eu utilizo no meu trabalho com análises. 
+- queries/: Contém consultas SQL para extração de dados
 
-  # Explicação do Código:
-  
-  1.1 Conectando ao Banco de Dados: Usamos create_engine para conectar ao PostgreSQL.
-  
-  2. Carregando os Dados: Utilizamos pd.read_sql para carregar os dados da tabela 'indicadores'.
-  
-  3. Inspeção Inicial: Exibimos as primeiras linhas do dataframe e verificamos a presença de valores nulos.
-  
-  4. Tratamento de Valores Nulos: Substituímos valores nulos na coluna 'valor' pela média e removemos linhas com valores nulos nas colunas 'indicador_nome' e 'data'.
-  
-  5. Remoção de Duplicatas: Eliminamos registros duplicados.
-  
-  6. Conversão de Tipos de Dados: Convertendo a coluna 'data' para o tipo datetime.
-  
-  7. Criação de Nova Coluna: Adicionamos uma coluna 'categoria' para categorizar os valores dos indicadores.
- 
-  8. Salvando os Dados Limpos: Gravamos o dataframe limpo de volta no banco de dados em uma nova tabela 'indicadores_limpos'.
+- notebooks/: Notebooks Jupyter com análises exploratórias
+
+- datasets/: Conjuntos de dados simulados para testes
+
+- docs/: Documentação detalhada sobre cada consulta e metodologia
+
+# 🔍 Principais Análises Realizadas
+## 1️⃣ Importação e Conexão ao Banco de Dados
+
+O primeiro passo para a análise de dados é estabelecer a conexão com o banco de dados do SIGEO.
+
+Banco: Oracle Business Intelligence
+
+
+## 2️⃣ Limpeza e Tratamento de Dados
+
+Inspeção inicial: Visualização das primeiras linhas e verificação de valores ausentes
+
+Tratamento de valores nulos: Substituição por média ou remoção conforme necessidade
+
+Remoção de duplicatas: Garantia da integridade dos dados
+
+Conversão de tipos: Ajustes para facilitar análises e visualizações
+
+Criação de colunas derivadas: Classificação de indicadore
+
+## 3️⃣ Extração de Indicadores Chave
+
+Consultas para obtenção de informações relevantes, como:
+
+Execução orçamentária por órgão
+
+Comparativo entre dotação inicial e executada
+
+Distribuição de empenhos e pagamentos por região e setor
+
+Identificação de padrões e anomalias nos gastos
+
+## 4️⃣ Visualização e Geração de Relatórios
+
+Os dados tratados e agregados são exportados para o Power BI, permitindo dashboards interativos para acompanhamento da execução orçamentária.
+
+
+
+
+
+
+
