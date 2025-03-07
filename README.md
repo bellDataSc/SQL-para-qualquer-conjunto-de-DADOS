@@ -1,21 +1,21 @@
+# SQL para Análise de Dados Orçamentários no Governo de São Paulo
 
-  ## SQL para Análise de Dados Orçamentários no Governo de São Paulo
+Por Isabel Gonçalves Cruz
 
-  # Este repositório documenta e disponibiliza scripts SQL e XML
-  utilizados na análise de dados orçamentários e financeiros do Governo do Estado de São Paulo. O foco é a manipulação e extração de dados do SIGEO (Sistema de Informações Gerenciais da Execução Orçamentária), um banco de dados que viabiliza a gestão e transparência dos gastos públicos através de consultas SQL e geração de relatórios.
+## Este repositório documenta e disponibiliza scripts SQL e XML
+utilizados na análise de dados orçamentários e financeiros do Governo do Estado de São Paulo. O foco é a manipulação e extração de dados do SIGEO (Sistema de Informações Gerenciais da Execução Orçamentária), um banco de dados que viabiliza a gestão e transparência dos gastos públicos através de consultas SQL e geração de relatórios.
 
-# Ferramentas utilizadas: 
+## Ferramentas utilizadas: 
 Oracle Business Intelligence, PostgreSQL, Pandas, Power BI
 
-# Objetivo: 
+## Objetivo: 
 Facilitar a extração e análise de dados orçamentários para embasar decisões estratégicas na gestão pública
 
-  - Banco Oracle Business Intelligence
+Banco Oracle Business Intelligence
+
 
   **Comandos utilizados como Analista de Dados Técnica PL pelo Governo de Estado de São Paulo [Nov/2024 - até o momento] 
-  
   **OBS: JANEIRO de 2025/ add buscas utilizadas de SQL e XML no **SIGEO** (SIGEO: Sistema de Informações Gerenciais da Execução Orçamentária) praticamente o banco de dados da União que possibilita a gestão e transparência dos gastos públicos, através da elaboração de consultas e relatórios. 
-  
   **Quando criei o repositório estava em exercio pelo Estado de Minas Gerais, tambem como Analista de Dados PL, ambos os governos de estado MG e SP usam do mesmo sistema.
 
 
