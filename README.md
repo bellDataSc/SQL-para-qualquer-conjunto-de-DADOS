@@ -1,7 +1,9 @@
 # SQL para Análise de Dados Orçamentários no Governo de São Paulo
 
 Por Isabel Gonçalves Cruz
-**Atualizações**: Add os cod atreves do notebook do **Google Colab** em XML no banco de dados Oracle
+
+**Atualizações**: Add os cod atreves do notebook do **Google Colab** em XML no banco de dados Oracle.
+
                   **Transformando as consultas** XML em **SQL**
 
 ## Este repositório documenta e disponibiliza scripts SQL e XML
