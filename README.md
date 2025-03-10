@@ -1,6 +1,8 @@
 # SQL para Análise de Dados Orçamentários no Governo de São Paulo
 
 Por Isabel Gonçalves Cruz
+**Atualizações**: Add os cod atreves do notebook do **Google Colab** em XML no banco de dados Oracle
+                  **Transformando as consultas** XML em **SQL**
 
 ## Este repositório documenta e disponibiliza scripts SQL e XML
 utilizados na análise de dados orçamentários e financeiros do Governo do Estado de São Paulo. O foco é a manipulação e extração de dados do SIGEO (Sistema de Informações Gerenciais da Execução Orçamentária), um banco de dados que viabiliza a gestão e transparência dos gastos públicos através de consultas SQL e geração de relatórios.
@@ -19,7 +21,7 @@ Banco Oracle Business Intelligence
   **Quando criei o repositório estava em exercio pelo Estado de Minas Gerais, tambem como Analista de Dados PL, ambos os governos de estado MG e SP usam do mesmo sistema.
 
 
- # 🗂 Estrutura do Repositório
+ ## 🗂 Estrutura do Repositório
 
 - queries/: Contém consultas SQL para extração de dados
 
@@ -29,7 +31,7 @@ Banco Oracle Business Intelligence
 
 - docs/: Documentação detalhada sobre cada consulta e metodologia
 
-# 🔍 Principais Análises Realizadas
+## 🔍 Principais Análises Realizadas
 ## 1️⃣ Importação e Conexão ao Banco de Dados
 
 O primeiro passo para a análise de dados é estabelecer a conexão com o banco de dados do SIGEO.
@@ -65,7 +67,34 @@ Identificação de padrões e anomalias nos gastos
 
 Os dados tratados e agregados são exportados para o Power BI, permitindo dashboards interativos para acompanhamento da execução orçamentária.
 
+## 📂 Exemplos de Código
 
+Consulta SQL para verificar os valores empenhados por órgão:
+
+  SELECT orgao, SUM(valor_empenhado) AS total_empenhado
+FROM execucao_orcamentaria
+WHERE ano = 2024
+GROUP BY orgao
+ORDER BY total_empenhado DESC;
+
+## Carregamento dos dados no Pandas:
+
+from sqlalchemy import create_engine
+import pandas as pd
+
+ //Conectar ao banco de dados
+engine = create_engine('postgresql://usuario:senha@host:porta/database')
+query = """
+SELECT * FROM execucao_orcamentaria WHERE ano = 2024;
+"""
+df = pd.read_sql(query, engine)
+
+
+📧 Contato
+
+Para dúvidas ou colaborações, entre em contato pelo LinkedIn ou via e-mail.
+
+📌 Autor: Bel - Analista de Dados Técnica PL - Governo do Estado de São Paulo
 
 
 
