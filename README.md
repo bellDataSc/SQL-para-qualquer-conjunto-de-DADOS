@@ -1,104 +1,97 @@
-# SQL para Análise de Dados Orçamentários no Governo de São Paulo
+# SQL for Budget Data Analysis in the Government of São Paulo
 
-Por Isabel Gonçalves Cruz
+By Isabel Gonçalves Cruz
 
-**Atualizações**: Add os cod atreves do notebook do **Google Colab** em XML no banco de dados Oracle.
+**Updates**: Add the code from the **Google Colab** notebook in XML in the Oracle database.
 
-                  **Transformando as consultas** XML em **SQL**
+**Transforming XML queries** into **SQL**
 
-## Este repositório documenta e disponibiliza scripts SQL e XML
-utilizados na análise de dados orçamentários e financeiros do Governo do Estado de São Paulo. O foco é a manipulação e extração de dados do SIGEO (Sistema de Informações Gerenciais da Execução Orçamentária), um banco de dados que viabiliza a gestão e transparência dos gastos públicos através de consultas SQL e geração de relatórios.
+## This repository documents and makes available SQL and XML scripts
+used in the analysis of budget and financial data of the Government of the State of São Paulo. The focus is the manipulation and extraction of data from SIGEO (Budget Execution Management Information System), a database that enables the management and transparency of public spending through SQL queries and report generation.
 
-## Ferramentas utilizadas: 
+## Tools used:
 Oracle Business Intelligence, PostgreSQL, Pandas, Power BI
 
-## Objetivo: 
-Facilitar a extração e análise de dados orçamentários para embasar decisões estratégicas na gestão pública
+## Objective:
+Facilitate the extraction and analysis of budget data to support strategic decisions in public management
 
-Banco Oracle Business Intelligence
+Oracle Business Intelligence Database
 
+**Commands used as a Technical Data Analyst PL by the Government of the State of São Paulo [Nov/2024 - present]
+**NOTE: JANUARY 2025/ add searches used in SQL and XML in **SIGEO** (SIGEO: Budget Execution Management Information System), practically the federal government's database that enables the management and transparency of public spending, through the preparation of queries and reports.
+**When I created the repository, I was working for the State of Minas Gerais, also as a Data Analyst PL; both the state governments of MG and SP use the same system.
 
-  **Comandos utilizados como Analista de Dados Técnica PL pelo Governo de Estado de São Paulo [Nov/2024 - até o momento] 
-  **OBS: JANEIRO de 2025/ add buscas utilizadas de SQL e XML no **SIGEO** (SIGEO: Sistema de Informações Gerenciais da Execução Orçamentária) praticamente o banco de dados da União que possibilita a gestão e transparência dos gastos públicos, através da elaboração de consultas e relatórios. 
-  **Quando criei o repositório estava em exercio pelo Estado de Minas Gerais, tambem como Analista de Dados PL, ambos os governos de estado MG e SP usam do mesmo sistema.
+## Repository Structure
 
+- queries/: Contains SQL queries for data extraction
 
- ## 🗂 Estrutura do Repositório
+- notebooks/: Jupyter notebooks with exploratory analyses
 
-- queries/: Contém consultas SQL para extração de dados
+- datasets/: Simulated data sets for testing
 
-- notebooks/: Notebooks Jupyter com análises exploratórias
+- docs/: Detailed documentation on each query and methodology
 
-- datasets/: Conjuntos de dados simulados para testes
+## Main Analyses Performed
+## Importing and Connecting to the Database
 
-- docs/: Documentação detalhada sobre cada consulta e metodologia
+The first step in data analysis is to establish the connection to the SIGEO database.
 
-## 🔍 Principais Análises Realizadas
-## 1️⃣ Importação e Conexão ao Banco de Dados
+Database: Oracle Business Intelligence
 
-O primeiro passo para a análise de dados é estabelecer a conexão com o banco de dados do SIGEO.
+## Data Cleaning and Processing
 
-Banco: Oracle Business Intelligence
+Initial inspection: Viewing the first rows and checking for missing values
 
+Handling null values: Replacing them with an average or removing them as needed
 
-## 2️⃣ Limpeza e Tratamento de Dados
+Removing duplicates: Ensuring data integrity
 
-Inspeção inicial: Visualização das primeiras linhas e verificação de valores ausentes
+Type conversion: Adjustments to facilitate analysis and visualization
 
-Tratamento de valores nulos: Substituição por média ou remoção conforme necessidade
+Creating derived columns: Classifying indicators
 
-Remoção de duplicatas: Garantia da integridade dos dados
+## Extracting Key Indicators
 
-Conversão de tipos: Ajustes para facilitar análises e visualizações
+Querying to obtain relevant information, such as:
 
-Criação de colunas derivadas: Classificação de indicadore
+Budget execution by agency
 
-## 3️⃣ Extração de Indicadores Chave
+Comparison between initial and executed allocations
 
-Consultas para obtenção de informações relevantes, como:
+Distribution of commitments and payments by region and sector
 
-Execução orçamentária por órgão
+Identifying patterns and anomalies in spending
 
-Comparativo entre dotação inicial e executada
+## Viewing and Generating Reports
 
-Distribuição de empenhos e pagamentos por região e setor
+The processed and aggregated data is exported to Power BI, enabling interactive dashboards to monitor budget execution.
 
-Identificação de padrões e anomalias nos gastos
+## Code Examples
 
-## 4️⃣ Visualização e Geração de Relatórios
+SQL query to check the amounts committed by agency:
 
-Os dados tratados e agregados são exportados para o Power BI, permitindo dashboards interativos para acompanhamento da execução orçamentária.
-
-## 📂 Exemplos de Código
-
-Consulta SQL para verificar os valores empenhados por órgão:
-
-  SELECT orgao, SUM(valor_empenhado) AS total_empenhado
+SELECT organ, SUM(valor_empromado) AS total_empromado
 FROM execucao_orcamentaria
 WHERE ano = 2024
-GROUP BY orgao
-ORDER BY total_empenhado DESC;
+GROUP BY organ
+ORDER BY total_empromado DESC;
 
-## Carregamento dos dados no Pandas:
+## Loading data into Pandas:
 
 from sqlalchemy import create_engine
 import pandas as pd
 
- //Conectar ao banco de dados
+//Connect to the database
 engine = create_engine('postgresql://usuario:senha@host:porta/database')
 query = """
 SELECT * FROM execucao_orcamentaria WHERE ano = 2024;
 """
 df = pd.read_sql(query, engine)
 
+Contact
 
-📧 Contato
+For questions or collaborations, contact us via LinkedIn or email.
 
-Para dúvidas ou colaborações, entre em contato pelo LinkedIn ou via e-mail.
-
-📌 Autor: Bel - Analista de Dados Técnica PL - Governo do Estado de São Paulo
-
-
-
+Author: Bel - Technical Data Analyst PL - Government of the State of São Paulo
 
 
